@@ -1,0 +1,27 @@
+<div class='container'>
+
+<form class='form-signin' action='/user/update/<%= user.id %>' method='POST'>
+  <h2 class='form-signin-heading'>Please sign in</h2>
+  
+  <input value='<%= user.username %>' type='text' name='username' class='form-control' placeholder='Username' autofocus>
+
+  <input value='<%= user.email %>' type='email' name='email' class='form-control' placeholder='Email address'>
+
+  <input type='password' name='password' class='form-control' placeholder='New Password'>
+
+  <input type='password' name='passwordConfirm' class='form-control' placeholder='Confirm New Password'>
+
+	<% if (session.authenticated && session.User.admin) { %>
+		<% if (user.admin) { %>
+			<input type="hidden" name="admin" value="unchecked">
+			<label class="checkbox"><input type="checkbox" name="admin" checked> Admin</label>
+		<% } else { %>
+			<input type="hidden" name="admin" value="unchecked">
+			<label class="checkbox"><input type="checkbox" name="admin"> Admin</label>
+		<% } %> 
+	<% } %> 
+
+  <button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>
+  </form>
+
+</div> <!-- /container -->

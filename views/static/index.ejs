@@ -1,0 +1,11 @@
+ <div class="container">
+
+  <div class="jumbotron">
+    <h1>Home</h1>
+    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    <% if (session.authenticated) { %>
+      <p><a class="btn btn-lg btn-success" href="/user/show/<%= session.User.id %>">Profile</a></p>
+    <% } else { %>
+      <p><a class="btn btn-lg btn-success" href="user/new">Sign up today</a></p>
+    <% } %>
+  </div>

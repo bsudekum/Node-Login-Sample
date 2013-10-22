@@ -1,0 +1,14 @@
+<div class='container'>
+	
+<h1>Created new scan</h1>
+
+	<h4>Username: <%= scan.username %></h4>
+	<h4>ID: <%= scan.id %></h4>
+	<h4>Location: <%= scan.latlng %></h4>
+	<h4>Device: <%= scan.device %></h4>
+	<h4>Public View: <%= scan.publicView %></h4>
+
+	<a href='/user/show/<%= session.User.id %>' class="btn btn-default">Back</a>
+
+	
+</div>
