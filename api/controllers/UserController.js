@@ -17,7 +17,7 @@ module.exports = {
 
   		if(err) {
   			console.log(err);
-  			
+
   			req.session.flash = {
   				err: err
   			}

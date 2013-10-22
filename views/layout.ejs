@@ -59,11 +59,13 @@
               <li><a href="/user">User Administration</a></li>
             <% } %>
           </ul>
-          <div class="navbar-right">
+          <ul class="nav navbar-nav navbar-right">
             <% if (session.authenticated) { %>
-              <a class="btn btn-default navbar-btn navbar-right" href="/session/destroy">sign-out</a>
+              <li class="btn btn-default navbar-btn navbar-right" href="/session/destroy">sign-out</li>
+                <li><img src='<%= session.User.gravatar %>' class='img-rounded gravatar' /></li>
+              </ul>
             <% } %>
-          </div>
+          </ul>
           <% if (!session.authenticated) { %>
           <div class="nav navbar-nav navbar-right">
           <li class="dropdown">

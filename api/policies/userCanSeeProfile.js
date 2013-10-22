@@ -5,7 +5,7 @@ module.exports = function(req, res, ok) {
 
 	if(!(sessionUserMatchesId || isAdmin)) {
 
-		var nonRightsError = [{name: 'noRights', message: 'You must be an admin'}]
+		var nonRightsError = [{name: 'noRights', message: 'You must be an admin.'}]
 		req.session.flash = {
 			err: nonRightsError
 		}

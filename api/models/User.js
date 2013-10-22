@@ -6,6 +6,7 @@
  *
  */
 var bcrypt = require('bcrypt');
+var gravatar = require('nodejs-gravatar');
 
 module.exports = {
 
@@ -27,7 +28,14 @@ module.exports = {
 
     admin: {
       type: 'boolean',
+      required: true,
       defaultsTo: true
+    },
+
+    gravatar: {
+      type: 'string',
+      required: true,
+      defaultsTo: 'http://static.bleacherreport.net/images/redesign/avatars/default-user-icon-profile.png'
     },
 
   	password: {
@@ -68,11 +76,13 @@ module.exports = {
     bcrypt.hash(values.password, 10, function passwordEncrypted (err, encryptedPassword) {
       if (err) return next(err);
       values.encryptedPassword = encryptedPassword;
+      
       // values.online = true;
+      values.gravatar = gravatar.imageUrl(values.email, { 'size': '100' });
+      
       next();
     });
 
   }
 
-	
 };

@@ -18,6 +18,12 @@ module.exports = {
   		required: true
   	},
 
+    quality: {
+      type: 'float',
+      defaultsTo: 50,
+      required: true
+    },
+
     username: {
       type: 'string',
       defaultsTo: 'admin',
